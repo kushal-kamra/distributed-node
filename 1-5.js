@@ -1,4 +1,3 @@
-/*
 const fs = require("fs");
 
 setImmediate(() => console.log(1));
@@ -11,7 +10,6 @@ fs.readFile('./README.md', () => {
     process.nextTick(() => console.log(7));
 });
 console.log(8);
-*/
 
 // Expected Output
 // 8 3 2 1 4 7 6 5
