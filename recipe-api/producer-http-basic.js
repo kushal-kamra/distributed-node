@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 
-const server = require('fastify')();
+import server from 'fastify';
 const HOST = process.env.HOST || '127.0.0.1';
 const PORT = process.env.PORT || 4000;
 
+const app = server();
+
 console.log(`worker pid=${process.pid}`);
 
-server.get('/recipes/:id', async (req, res) => {
+app.get('/recipes/:id', async (req, res) => {
     console.log(`worker request pid=${process.pid}`);
     const id = Number(req.params.id);
 
@@ -39,6 +41,6 @@ server.get('/recipes/:id', async (req, res) => {
     };
 });
 
-server.listen(PORT, HOST, () => {
+app.listen(PORT, HOST, () => {
     console.log(`Producer running at http://${HOST}:${PORT}`);
 })

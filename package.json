@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Distributed systems with Node.js",
   "main": "1-5.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^4.17.0"
+    "fastify": "^4.17.0",
+    "node-fetch": "^3.3.1"
   }
 }
